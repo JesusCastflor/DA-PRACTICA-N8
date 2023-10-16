@@ -1,11 +1,19 @@
 class Estudiante:
     contadorEstudiantes = 0
+    def __new__(cls, *args, **kwargs):
+        print("Se ha creado un estudiante nuevo...")
+        return super().__new__(cls)
+        
+
     def __init__(self, nombre, edad, matricula):
         self._nombre = nombre 
         self._edad = edad 
         self.matricula = matricula
         self.matriculado = False
         self.pago_pension = False
+        Estudiante.aumentarContador()
+    def __del__(self):
+        print(f"Se elimino al estudiante {self.nombre}")
 
 
 
@@ -16,7 +24,7 @@ class Estudiante:
 
     def imprimirDatos(self):
         print("Nombre:", self.nombre)
-        print("Edad:", self.edad)
+        print("Edad:", self.matricula)
         print("Número de Matrícula:", self.matricula)
         if self.matriculado:
             print("Matriculado: Sí")
@@ -48,3 +56,19 @@ class Estudiante:
     @nombre.setter
     def nombre(self, nuevo):
         self._nombre = nuevo  
+    @classmethod
+    def obtener_contador_estudiantes(cls):
+        return cls.contadorEstudiantes
+    @classmethod 
+    def print_contador_estudiantes(cls):
+        print(f"Num. de estudiantes: {cls.contadorEstudiantes}")
+    @classmethod
+    def aumentarContador(cls):
+        cls.contadorEstudiantes = cls.contadorEstudiantes + 1
+
+    @staticmethod
+    def info():
+        print("Esta clase es la clase estudiante, representa y contiene la informacion necesaria para la matriculacion de un estudiante.")
+    @staticmethod
+    def printNumEstudiantes():
+        Estudiante.print_contador_estudiantes()

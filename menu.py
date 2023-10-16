@@ -6,6 +6,10 @@ def menu():
     print("2. Matricular al estudiante")
     print("3. Pagar pensión del estudiante")
     print("4. Mostrar información del estudiante")
+    print("5. Cambiar datos del estudiante")
+    print("6. Ver numero actual de estudiantes")
+    print("7. Informacion de la clase Estudiante")
+
     print("0. Salir")
 
     estudiante = Estudiante("", 0, "")
@@ -23,6 +27,18 @@ def menu():
             print("Estudiante Pagó pension")
         elif opcion == "4":
             estudiante.imprimirDatos()
+        elif opcion == "5":
+            print("Nuevo Nombre:")
+            nuevo_nombre = input()
+            estudiante.nombre = nuevo_nombre
+            print("Nueva edad:")
+            nueva_edad = input()
+            estudiante.edad = int(nueva_edad)
+        elif opcion == "6":
+            Estudiante.print_contador_estudiantes()
+        elif opcion == "7":
+            Estudiante.info()
+            Estudiante.printNumEstudiantes()
         elif opcion == "0":
             break
         else:

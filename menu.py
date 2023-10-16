@@ -1,4 +1,4 @@
-from estudiante import Estudiante
+from Estudiante import Estudiante
 
 def menu():
     print("Menú:")
@@ -17,8 +17,10 @@ def menu():
             estudiante.ingresarDatos()
         elif opcion == "2":
             estudiante.matricular()
+            print("Estudiante Matriculado")
         elif opcion == "3":
             estudiante.pagarPension()
+            print("Estudiante Pagó pension")
         elif opcion == "4":
             estudiante.imprimirDatos()
         elif opcion == "0":

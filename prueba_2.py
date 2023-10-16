@@ -1,4 +1,4 @@
-from estudiante import Estudiante
+from Estudiante import Estudiante
 
 estudiante1 = Estudiante("Carlos", 19, "2023-003")
 estudiante2 = Estudiante("Laura", 21, "2023-004")

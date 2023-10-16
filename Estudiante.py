@@ -1,10 +1,13 @@
 class Estudiante:
+    contadorEstudiantes = 0
     def __init__(self, nombre, edad, matricula):
-        self.nombre = nombre
-        self.edad = edad
+        self._nombre = nombre 
+        self._edad = edad 
         self.matricula = matricula
         self.matriculado = False
         self.pago_pension = False
+
+
 
     def ingresarDatos(self):
         self.nombre = input("Nombre del estudiante: ")
@@ -29,3 +32,19 @@ class Estudiante:
 
     def pagarPension(self):
         self.pago_pension = True
+    
+    @property
+    def edad(self):
+        return self._edad  
+
+    @edad.setter
+    def edad(self, nuevo):
+        self._edad = nuevo
+
+    @property
+    def nombre(self):
+        return self._nombre  
+
+    @nombre.setter
+    def nombre(self, nuevo):
+        self._nombre = nuevo  
